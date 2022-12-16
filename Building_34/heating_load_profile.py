@@ -112,6 +112,7 @@ print('Maximale Heizlast OG = ' + str((np.amax(Qh[:, 1]))) + ' kW')
 #print('Maximale Heizlast DG = ' + str((np.amax(Qh[:, 2]))) + ' kW')
 print('Maximale Heizlast Summe = ' + str((np.amax(Qh[:, 0]) + np.amax(Qh[:, 1]) )) + ' kW')
 
+
 # %% Abbildungen
 Heizlast = pd.DataFrame({'Stunden_array': np.arange(8760),
                          'EG': Qh[:, 0],
@@ -148,7 +149,7 @@ plt.xlim(0, 8761)
 p.set_title(f"Heizlast {building}", fontsize = 30)
 p.set_xlabel("Stunden", fontsize = 20)
 p.set_ylabel("Leistung (KW)", fontsize = 20)
-plt.savefig(f'output/Heizlast_{building}')
+plt.savefig(f'output/Heizlast_2_{building}')
 plt.show()
 
 Last_df['interval'] = 1
