@@ -1,4 +1,3 @@
-
 Summe Heizlast = (array([48.73402488, 49.83327717]), 0) MWh
 Summe Heizlast Haus 34 = 98.56730204804566 MWh
 Maximale Heizlast EG = 25.52734272 kW

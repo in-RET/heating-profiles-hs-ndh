@@ -9,6 +9,7 @@ from utils import yearly_pattern, weather_data
 numerosity = 2  # number of buildings/floors to be simulated
 year = 2022  # year to be simulated
 building = 'Haus 34'
+label_Hl = 'Haus_34'
 Ta, GTN, GTO, GTH, GTS, GTW = weather_data()
 
 #  Fensterflächen
@@ -132,7 +133,7 @@ plt.ylabel('Leistung in kW', fontdict={'fontsize': 20})
 plt.xticks([0, 744, 1416, 2160, 2880, 3624, 4344, 5088, 5832, 6552, 7296, 8016],
            ['Jan', 'Feb', 'März', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'], fontdict={'fontsize': 12})
 plt.legend()
-plt.savefig(f'output/Heizlast_{building}')
+plt.savefig(f'output/Heizlast_{label_Hl}')
 plt.show()
 
 #Jahresdauerline plotten
@@ -149,7 +150,7 @@ plt.xlim(0, 8761)
 p.set_title(f"Heizlast {building}", fontsize = 30)
 p.set_xlabel("Stunden", fontsize = 20)
 p.set_ylabel("Leistung (KW)", fontsize = 20)
-plt.savefig(f'output/Heizlast_2_{building}')
+plt.savefig(f'output/Heizlast_2_{label_Hl}')
 plt.show()
 
 Last_df['interval'] = 1
