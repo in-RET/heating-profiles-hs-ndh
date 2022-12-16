@@ -1,0 +1,5 @@
+Summe Heizlast = (array([118.36570409,  30.85112938]), 0) MWh
+Summe Heizlast Haus 28 = 149.21683347144224 MWh
+Maximale Heizlast EG = 62.569149760000016 kW
+Maximale Heizlast OG = 16.154990079999997 kW
+Maximale Heizlast Summe = 78.72413984000002 kW
