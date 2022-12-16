@@ -9,6 +9,7 @@ from utils import yearly_pattern, weather_data
 numerosity = 2  # number of buildings/floors to be simulated
 year = 2022  # year to be simulated
 building = 'Haus 34'
+building_eng = 'Building 34'
 label_Hl = 'Haus_34'
 Ta, GTN, GTO, GTH, GTS, GTW = weather_data()
 
@@ -136,6 +137,20 @@ plt.legend()
 plt.savefig(f'output/Heizlast_{label_Hl}')
 plt.show()
 
+# Plots auf Englisch
+plt.stackplot(Heizlast.index, Heizlast.values.T, colors=['gold', 'limegreen', 'coral'], labels=['Ground floor',
+                                                                                                'First floor', 'Second floor'])
+plt.ylim(0, None)
+plt.xlim(0, 8761)
+plt.xlabel(2022, fontdict={'fontsize': 20})
+plt.title(f'Heat load profile {building_eng}', fontdict={'fontsize': 30})
+plt.ylabel('Power (kW)', fontdict={'fontsize': 20})
+plt.xticks([0, 744, 1416, 2160, 2880, 3624, 4344, 5088, 5832, 6552, 7296, 8016],
+           ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'], fontdict={'fontsize': 12})
+plt.legend()
+plt.savefig(f'output/Heat_profiles_{label_Hl}')
+plt.show()
+
 #Jahresdauerline plotten
 Heizlast['Heizlast'] = Heizlast[list(Heizlast.columns)].sum(axis=1)
 Heizlast_array = Heizlast['Heizlast'].values
@@ -153,6 +168,16 @@ p.set_ylabel("Leistung (KW)", fontsize = 20)
 plt.savefig(f'output/Heizlast_2_{label_Hl}')
 plt.show()
 
+# Plot auf Englisch
+p = sns.lineplot(x = "Stunden", y = "Heizlast", data = Last_df)
+plt.ylim(0, None)
+plt.xlim(0, 8761)
+p.set_title(f"Heat load profile {building}", fontsize = 30)
+p.set_xlabel("Time (hours)", fontsize = 20)
+p.set_ylabel("Power (KW)", fontsize = 20)
+plt.savefig(f'output/Heat_profiles_2_{label_Hl}')
+plt.show()
+
 Last_df['interval'] = 1
 Last_df_sorted = Last_df.sort_values(by=['Heizlast'], ascending=False)
 Last_df_sorted['Dauer'] = Last_df_sorted['interval'].cumsum()
@@ -165,6 +190,16 @@ p.set_title(f"Jahresdauerlinie Heizlast {building}", fontsize = 30)
 p.set_xlabel("Stunden", fontsize = 20)
 p.set_ylabel("Leistung (KW)", fontsize = 20)
 plt.savefig(f'output/JDL_HL_{building}')
+plt.show()
+
+# Plot auf Englisch
+p = sns.lineplot(x = "Dauer", y = "Heizlast", data = Last_df_sorted)
+plt.ylim(0, None)
+plt.xlim(0, 8761)
+p.set_title(f"Load duration curve {building}", fontsize = 30)
+p.set_xlabel("Time (hours)", fontsize = 20)
+p.set_ylabel("Power (KW)", fontsize = 20)
+plt.savefig(f'output/LDC_HL_{label_Hl}')
 plt.show()
 
 # Export von Daten
