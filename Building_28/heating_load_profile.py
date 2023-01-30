@@ -3,6 +3,9 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 from weather_data.utils import yearly_pattern, weather_data
+import sys
+sys.path.insert(0, "..")
+
 
 # Eingabeparameter
 
@@ -133,7 +136,7 @@ plt.xlabel(2022, fontdict={'fontsize': 20})
 plt.title(f'Heizlast {building}', fontdict={'fontsize': 30})
 plt.ylabel('Leistung in kW', fontdict={'fontsize': 20})
 plt.xticks([0, 744, 1416, 2160, 2880, 3624, 4344, 5088, 5832, 6552, 7296, 8016],
-           ['Jan', 'Feb', 'März', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'], fontdict={'fontsize': 12})
+           ['Jan', 'Feb', 'März', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'])
 plt.legend()
 plt.savefig(f'output/Heizlast_{label_Hl}')
 plt.show()
@@ -147,7 +150,7 @@ plt.xlabel(2022, fontdict={'fontsize': 20})
 plt.title(f'Heat load profile {building_eng}', fontdict={'fontsize': 30})
 plt.ylabel('Power (kW)', fontdict={'fontsize': 20})
 plt.xticks([0, 744, 1416, 2160, 2880, 3624, 4344, 5088, 5832, 6552, 7296, 8016],
-           ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'], fontdict={'fontsize': 12})
+           ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'])
 plt.legend()
 plt.savefig(f'output/Heat_profiles_{label_Hl}')
 plt.show()
