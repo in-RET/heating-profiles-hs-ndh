@@ -29,7 +29,7 @@ def yearly_pattern(year):
 
     year_behaviour_hourly = Year_behaviour.repeat(24)
     year_behaviour_hourly[0:6] = 3
-    for i in range(8):  # Nachtabsenkung von 22 bis 6 Uhr (8 Stnden)
+    for i in range(8):  # Nachtabsenkung von 22 bis 6 Uhr (8 Stunden)
         year_behaviour_hourly[22:][i:len(year_behaviour_hourly):24] = 3
     return year_behaviour_hourly
 

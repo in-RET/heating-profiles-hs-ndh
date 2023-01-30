@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
-from utils import yearly_pattern, weather_data
+from weather_data.utils import yearly_pattern, weather_data
 
 # Eingabeparameter
 
