@@ -3,7 +3,6 @@ import calendar
 import numpy as np
 import os
 
-
 def yearly_pattern(year):
     # Yearly behaviour pattern
     first_day = datetime.date(year, 1, 1).strftime("%A")
